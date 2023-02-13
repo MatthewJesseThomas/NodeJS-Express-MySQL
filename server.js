@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to The DangerZone!!!" });
 });
 
-app.use('/', (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.status(201).json({
       message:'You can send requests to the following routes:',
       url1: {
