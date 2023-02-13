@@ -4,7 +4,7 @@ const tutorials = require('../controllers/tutorial.controller.js');
 let router = require('express').Router();
 
 // Create a new Tutorial
-router.post("/post", tutorials.create);
+router.post("/tutorials", tutorials.create);
 
 // Retrieve all Tutorials
 router.get("/publishing", tutorials.findAll);

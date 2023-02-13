@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
       requests: 'Post/Create'
     },
     url2: {
-      url: '/',
+      url: '/publishing',
       requests: 'Get/findAll'
     },
     url3: {
@@ -33,19 +33,19 @@ app.get("/", (req, res) => {
       requests: 'Get/findAllPublished'
     },
     url4: {
-      url: '/:id',
+      url: '/findOne:id',
       requests: 'Get/FindOne'
     },
     url5: {
-      url: '/:id',
+      url: '/Update:id',
       requests: 'Put/Update'
     },
     url6: {
-      url: '/:id',
+      url: '/Delete:id',
       requests: 'DeleteOnce'
     },
     url7: {
-      url: '/',
+      url: '/Delete',
       requests: 'DeleteAll'
     },
   });
