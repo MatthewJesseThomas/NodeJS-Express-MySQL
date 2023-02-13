@@ -21,7 +21,7 @@ exports.create = (req, res) => {
       if (err)
         res.status(500).send({
           message:
-            err.message || "Some error occurred while creating the Tutorial."
+            err.message || "An Error occurred while creating the Tutorial."
         });
       else res.send(data);
     });
@@ -64,7 +64,7 @@ exports.findAllPublished = (req, res) => {
         if (err)
         res.status(500).send({
             message:
-            err.message || "Some error occurred while retrieving tutorials."
+            err.message || "Error occurred while retrieving tutorials."
         });
         else res.send(data);
     });
