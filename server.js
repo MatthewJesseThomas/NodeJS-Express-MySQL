@@ -18,41 +18,41 @@ app.use(express.urlencoded({ extended: true }));
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to The DangerZone!!!" });
+  res.status(200).json({
+    message:'You can send requests to the following routes:',
+    url1: {
+      url: '/tutorials',
+      requests: 'Post/Create'
+    },
+    url2: {
+      url: '/',
+      requests: 'Get/findAll'
+    },
+    url3: {
+      url: '/published',
+      requests: 'Get/findAllPublished'
+    },
+    url4: {
+      url: '/:id',
+      requests: 'Get/FindOne'
+    },
+    url5: {
+      url: '/:id',
+      requests: 'Put/Update'
+    },
+    url6: {
+      url: '/:id',
+      requests: 'DeleteOnce'
+    },
+    url7: {
+      url: '/',
+      requests: 'DeleteAll'
+    },
+  });
 });
 
-app.get('/routes', (req, res, next) => {
-    res.status(201).json({
-      message:'You can send requests to the following routes:',
-      url1: {
-        url: '/products',
-        requests: 'Post/Create'
-      },
-      url2: {
-        url: '/',
-        requests: 'Get/findAll'
-      },
-      url3: {
-        url: '/published',
-        requests: 'Get/findAllPublished'
-      },
-      url4: {
-        url: '/:id',
-        requests: 'Get/FindOne'
-      },
-      url5: {
-        url: '/:id',
-        requests: 'Put/Update'
-      },
-      url6: {
-        url: '/:id',
-        requests: 'DeleteOnce'
-      },
-      url7: {
-        url: '/',
-        requests: 'DeleteAll'
-      },
-    });
-});
+
+
 // ...
 require("./app/routes/tutorial.routes.js")(app);
 
