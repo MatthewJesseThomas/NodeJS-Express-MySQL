@@ -20,36 +20,36 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to The DangerZone!!!" });
 });
 
-app.get('/', (req, res, next) => {
+app.get('/routes', (req, res, next) => {
     res.status(201).json({
       message:'You can send requests to the following routes:',
       url1: {
         url: '/products',
-        requests: 'POST'
+        requests: 'Post/Create'
       },
       url2: {
-        url: '/products/:productId',
-        requests: 'GET'
+        url: '/',
+        requests: 'Get/findAll'
       },
       url3: {
-        url: '/products/special',
-        requests: 'GET'
+        url: '/published',
+        requests: 'Get/findAllPublished'
       },
       url4: {
-        url: '/orders',
-        requests: 'GET'
+        url: '/:id',
+        requests: 'Get/FindOne'
       },
       url5: {
-        url: '/orders/:orderId',
-        requests: 'PUT'
+        url: '/:id',
+        requests: 'Put/Update'
       },
       url6: {
-        url: '/orders/:orderId',
-        requests: 'DELETE'
+        url: '/:id',
+        requests: 'DeleteOnce'
       },
       url7: {
-        url: '/orders/:orderId',
-        requests: 'DELETE'
+        url: '/',
+        requests: 'DeleteAll'
       },
     });
 });
