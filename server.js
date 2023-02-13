@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 
 let corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "https://nodejs-express-mysql-xhyj.onrender.com/"
 };
 
 app.use(cors(corsOptions));
@@ -20,6 +20,40 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to The DangerZone!!!" });
 });
 
+app.use('/', (req, res, next) => {
+    res.status(201).json({
+      message:'You can send requests to the following routes:',
+      url1: {
+        url: '/products',
+        requests: 'POST'
+      },
+      url2: {
+        url: '/products/:productId',
+        requests: 'GET'
+      },
+      url3: {
+        url: '/products/special',
+        requests: 'GET'
+      },
+      url4: {
+        url: '/orders',
+        requests: 'GET'
+      },
+      url5: {
+        url: '/orders/:orderId',
+        requests: 'PUT'
+      },
+      url6: {
+        url: '/orders/:orderId',
+        requests: 'DELETE'
+      },
+      url7: {
+        url: '/orders/:orderId',
+        requests: 'DELETE'
+      },
+    });
+});
+// ...
 require("./app/routes/tutorial.routes.js")(app);
 
 // set port, listen for requests
